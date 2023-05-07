@@ -1,0 +1,73 @@
+HTML CODE:
+
+This code is an HTML code for a simple calculator web page. Let's go through each section:
+
+- `<!DOCTYPE html>`: This is a document type declaration that specifies the version of HTML being used in the web page. In this case, it is HTML5.
+
+- `<html>`: This tag indicates the start of an HTML document.
+
+- `<head>`: This is the section of the HTML document that contains metadata about the web page such as the character encoding, viewport settings, description, author, and so on.
+
+- `<meta charset="utf-8">`: This meta tag specifies the character encoding used in the web page. utf-8 is the most commonly used character encoding for web pages.
+
+- `<meta name="viewport" content="width-device-width, initial-scale=1.0">`: This meta tag specifies the viewport settings for the web page. In this case, it sets the width of the viewport to the device width and sets the initial zoom level to 1.0.
+
+- `<meta lang="en-us">`: This meta tag specifies the language of the web page. In this case, it is set to US English.
+
+- `<meta property="og:type" content="website">`: This meta tag specifies the Open Graph type of the web page. Open Graph is a protocol used to provide metadata for social media platforms.
+
+- `<meta name="description" content="A simple calculator that performs basic arithmetic operations">`: This meta tag provides a brief description of the web page that can be used by search engines.
+
+- `<meta name="author" content="Olaoluwa Akinfenwa">`: This meta tag specifies the author of the web page.
+
+- `<meta name="robots" content="index, follow">`: This meta tag specifies the search engine robots to index and follow the web page.
+
+- `<title>Calculator</title>`: This tag specifies the title of the web page that is displayed in the browser tab.
+
+- `<link rel="stylesheet" type="text/css" href="style.css">`: This tag links to an external CSS file that is used to style the web page.
+
+- `<body>`: This is the section of the HTML document that contains the visible content of the web page.
+
+- `<div class="calculator">`: This is a container element that holds all the elements of the calculator.
+
+- `<input type="text" class="display" readonly>`: This tag creates an input element that displays the numbers and operators entered by the user and the result of calculations. The `readonly` attribute prevents users from typing into the input field.
+
+- `<button>`: These tags create clickable buttons that represent the numbers, operators, and clear button of the calculator. Each button has a unique class name and an `onclick` attribute that calls a JavaScript function when the button is clicked.
+
+- `<script src="script.js"></script>`: This tag links to an external JavaScript file that contains the functions that perform the calculations and update the display.
+
+CSS CODE:
+
+This code contains a series of CSS rules that style a calculator webpage. Here is an explanation of each rule:
+
+1. `body`: This rule sets the font family and size for the entire webpage. The `font-family` property sets the primary font for text, and `font-size` sets the default font size.
+
+2. `.calculator`: This rule styles the container that holds the calculator display and buttons. It sets the display to a flex container that wraps its child elements, sets the width to 300 pixels, centers the container on the page, adds a light gray border, a white background color, a 10 pixel border radius, and a subtle box shadow.
+
+3. `.display`: This rule styles the calculator display input element. It sets the width to 100%, the height to 60 pixels, the font size to 28 pixels, and aligns the text to the right. It also adds a light gray border, a 5 pixel border radius, a light gray background color, and a subtle inset box shadow.
+
+4. `button`: This rule styles all of the calculator buttons. It sets the width and height to 50 pixels, adds a 5 pixel margin around each button, sets the font size to 24 pixels, removes the default button border, adds a 5 pixel border radius, sets the background color to light gray, and adds a cursor pointer. It also adds a 0.2 second transition effect to the background color when the button is hovered over.
+
+5. `button:hover`: This rule changes the background color of the calculator buttons to a darker shade of gray when the button is hovered over.
+
+6. `button.operator`: This rule styles the operator buttons differently than the other buttons. It sets the background color to a bright orange, the text color to white, and adds a bold font weight.
+
+7. `button.clear`: This rule styles the clear button differently than the other buttons. It sets the background color to a deep red, the text color to white, and adds a bold font weight.
+
+8. `button.equal`: This rule styles the equal button differently than the other buttons. It sets the background color to a bright green, the text color to white, and adds a bold font weight.
+
+JAVASCRIPT CODE:
+
+This is a JavaScript code that defines a simple calculator. The code starts by declaring three variables `display`, `operator`, `firstNumber`, and `secondNumber`. The `display` variable stores the calculator's display element, while the `operator`, `firstNumber`, and `secondNumber` variables store the current operator, the first number entered by the user, and the second number entered by the user, respectively.
+
+The code then defines four functions:
+
+1. `addToDisplay(num)` - This function is called when a user clicks on a number button. It adds the number to the display element. If the display value is `0`, the number replaces `0`. Otherwise, the number is added to the end of the display value.
+
+2. `clearDisplay()` - This function is called when the user clicks on the clear button. It resets the display value, operator, firstNumber, and secondNumber to their default values.
+
+3. `setOperator(op)` - This function is called when a user clicks on an operator button (+, -, *, /). It sets the operator variable to the clicked operator, sets the firstNumber variable to the current display value, and resets the display value to 0.
+
+4. `calculate()` - This function is called when a user clicks on the equal button. It gets the secondNumber variable value from the display and performs the appropriate calculation based on the operator value. It then updates the display value to the result and resets the operator, firstNumber, and secondNumber variables.
+
+In summary, the JavaScript code defines a simple calculator with four functions that handle input and calculation.
