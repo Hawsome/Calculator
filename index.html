@@ -33,19 +33,22 @@
             <button class="operator" onclick="setOperator('+' )" aria-label="Add" role="button" accesskey="p">+</button>
             <button class="number" onclick="addToDisplay('0')" aria-label="Zero" role="button" accesskey="0">0</button>
             <button class="number" onclick="addToDisplay('.')" aria-label="Decimal" role="button" accesskey=".">.</button>
+            <button class="delete" onclick="deleteLastCharacter()" aria-label="Delete" role="button" accesskey="d">
+                <i class="fas fa-trash-alt"></i>
+              </button>
             <button class="equal" onclick="calculate()" aria-label="Equal" role="button" accesskey="q">=</button>
         </div>
     </main>
     <footer>
         <p>&copy; 2023 Olaoluwa Akinfenwa. All rights reserved.</p>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/olaoluwa-akinfenwa-b44026208" class="linkedin">
+            <a href="https://www.linkedin.com/in/olaoluwa-akinfenwa-b44026208" class="linkedin" target="_blank">
                 <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://twitter.com/hawsome_a" class="twitter">
+            <a href="https://twitter.com/hawsome_a" class="twitter" target="_blank">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a href="awesome.akinfenwa@outlook.com" class="email">
+            <a href="mailto:awesome.akinfenwa@outlook.com" class="email" target="_blank">
                 <i class="far fa-envelope"></i>
             </a>
         </div>
