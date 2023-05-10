@@ -18,6 +18,16 @@ header {
   text-align: center;
   border-radius: 10px 10px 0 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Style the header title */
@@ -51,6 +61,16 @@ header h1 {
   background-color: #f9f9f9;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
+  animation: slideIn 1s ease-in;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* Style the calculator buttons */
@@ -69,6 +89,8 @@ button {
 /* Style the calculator buttons on hover */
 button:hover {
   background-color: #bbb;
+  transform: scale(1.1);
+  transition: all 0.2s;
 }
 
 /* Style the operator buttons differently */
@@ -101,4 +123,103 @@ footer {
   border-radius: 0 0 10px 10px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
   margin-top: 50px;
+}
+
+/* Style the social icons container */
+.social-icons {
+  margin-top: 10px;
+}
+
+/* Style the social icons */
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #333;
+}
+
+.social-icons i {
+  font-size: 24px;
+  transition: color 0.2s;
+}
+
+/* Style the social icons on hover */
+.social-icons a:hover i {
+  color: #171b82cc; /* LinkedIn color */
+}
+
+.social-icons a.linkedin:hover i {
+  color: #0A66C2;
+}
+
+.social-icons a.twitter:hover i {
+  color: #00acee; /* Twitter color */
+}
+
+.social-icons a.email:hover i {
+  color: #171b82cc; /* Email color */
+}
+
+/* Add animation to the social icons on hover */
+.social-icons a:hover i {
+  animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* CSS for screens smaller than 360px */
+@media only screen and (max-width: 360px) {
+  /* Adjust the calculator container */
+  .calculator {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Adjust the calculator buttons */
+  .calculator button {
+    width: calc(25% - 10px); /* Calculate width minus margin */
+    font-size: 18px;
+    margin: 5px; /* Add margin between buttons */
+  }
+
+  /* Adjust the footer */
+  footer {
+    margin-top: 20px;
+  }
+}
+
+/* CSS for screens between 361px and 1024px */
+@media only screen and (min-width: 361px) and (max-width: 1024px) {
+  /* Adjust the calculator container */
+  .calculator {
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  /* Adjust the calculator display */
+  .display {
+    height: 50px;
+    font-size: 24px;
+  }
+
+  /* Adjust the calculator buttons */
+  .calculator button {
+    width: calc(20% - 10px); /* Calculate width minus margin */
+    font-size: 20px;
+    margin: 5px; /* Add margin between buttons */
+  }
+
+  /* Adjust the footer */
+  footer {
+    margin-top: 30px;
+  }
 }
