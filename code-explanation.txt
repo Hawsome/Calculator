@@ -38,23 +38,65 @@ This code is an HTML code for a simple calculator web page. Let's go through eac
 
 CSS CODE:
 
-This code contains a series of CSS rules that style a calculator webpage. Here is an explanation of each rule:
+This code contains a series of CSS rules that styles various elements of a calculator interface and includes animations. Here's an explanation of the different sections and their purpose:
 
-1. `body`: This rule sets the font family and size for the entire webpage. The `font-family` property sets the primary font for text, and `font-size` sets the default font size.
+Font, size, and color:
 
-2. `.calculator`: This rule styles the container that holds the calculator display and buttons. It sets the display to a flex container that wraps its child elements, sets the width to 300 pixels, centers the container on the page, adds a light gray border, a white background color, a 10 pixel border radius, and a subtle box shadow.
+Sets the font family to Arial, sans-serif.
+Sets the font size to 16 pixels.
+Sets the text color to black (#000).
+Background color:
 
-3. `.display`: This rule styles the calculator display input element. It sets the width to 100%, the height to 60 pixels, the font size to 28 pixels, and aligns the text to the right. It also adds a light gray border, a 5 pixel border radius, a light gray background color, and a subtle inset box shadow.
+Sets the background color of the body element to a light gray (#f5f5f5).
+Header styling:
 
-4. `button`: This rule styles all of the calculator buttons. It sets the width and height to 50 pixels, adds a 5 pixel margin around each button, sets the font size to 24 pixels, removes the default button border, adds a 5 pixel border radius, sets the background color to light gray, and adds a cursor pointer. It also adds a 0.2 second transition effect to the background color when the button is hovered over.
+Sets the background color of the header element to a specific orange shade (#f7a23e).
+Sets the text color to white.
+Adds padding, text alignment, border radius, and box shadow to the header element.
+Applies a fade-in animation to the header element using keyframes.
+Header title styling:
 
-5. `button:hover`: This rule changes the background color of the calculator buttons to a darker shade of gray when the button is hovered over.
+Sets the font size to 36 pixels.
+Removes the top margin from the header title.
+Calculator container styling:
 
-6. `button.operator`: This rule styles the operator buttons differently than the other buttons. It sets the background color to a bright orange, the text color to white, and adds a bold font weight.
+Sets the display property to flex and enables wrapping.
+Sets a fixed width of 300 pixels.
+Applies margins and border radius to the calculator container.
+Adds a box shadow to create a subtle shadow effect.
+Calculator display styling:
 
-7. `button.clear`: This rule styles the clear button differently than the other buttons. It sets the background color to a deep red, the text color to white, and adds a bold font weight.
+Sets the width and height of the display element.
+Sets the font size and alignment.
+Adds padding, border, border radius, background color, and box shadow to the display element.
+Applies a slide-in animation to the display element using keyframes.
+Calculator button styling:
 
-8. `button.equal`: This rule styles the equal button differently than the other buttons. It sets the background color to a bright green, the text color to white, and adds a bold font weight.
+Sets the width, height, margins, font size, border, border radius, and background color for the buttons.
+Defines a transition effect for smooth hover state transitions.
+Operator button styling:
+
+Sets a specific background color and text color for the operator buttons.
+Clear button styling:
+
+Sets a specific background color and text color for the clear button.
+Equal button styling:
+
+Sets a specific background color and text color for the equal button.
+Footer styling:
+
+Sets the background color, text color, padding, text alignment, border radius, and box shadow for the footer.
+Social icons styling:
+
+Sets margins and default color for the social icons.
+Social icons hover styling:
+
+Sets the color of the icons to a specific shade when hovered.
+Adds a bounce animation effect to the icons using keyframes.
+Media queries:
+
+Adjusts the calculator container width, margin-top, and button width/font size for screens smaller than 360 pixels and between 361 pixels and 1024 pixels.
+Modifies the footer margin-top for different screen sizes.
 
 JAVASCRIPT CODE:
 
