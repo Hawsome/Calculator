@@ -134,4 +134,13 @@ document.addEventListener("keydown", function(event) {
 			setOperator("+");
 			break;
 	}
-});
+})
+// Show keyboard when input field is focused
+display.addEventListener("input", function() {
+	display.focus();
+  });
+  
+  // Prevent default behavior of touch events on the input field to prevent the keyboard from disappearing on touch devices
+  display.addEventListener("touchstart", function(event) {
+	event.preventDefault();
+  });
