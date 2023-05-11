@@ -48,6 +48,24 @@ function deleteLastCharacter() {
 	display.value = display.value.slice(0, -1);
   }
 
+// Handle keyboard input for mobile devices
+function handleMobileKeyboardInput(event) {
+	const key = event.key;
+
+	// Check if the pressed key is a number key
+	if (/\d/.test(key)) {
+		addToDisplay(key);
+	}
+}
+
+// Add event listener for keyboard input on mobile devices
+document.addEventListener("keydown", function(event) {
+	// Check if the input is from a mobile device
+	if (/Mobi/.test(navigator.userAgent)) {
+		handleMobileKeyboardInput(event);
+	}
+});
+
 function handleKeyboardInput(event) {
 	const key = event.key;
 	if (/\d/.test(key)) {
