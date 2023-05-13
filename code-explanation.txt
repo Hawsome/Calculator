@@ -80,31 +80,83 @@ JAVASCRIPT CODE:
 
 This is a JavaScript code that defines a simple calculator. Here's an explanation of each part:
 
+Sure! Here's an explanation of each line of code in this snippet:
+
+```
 let display = document.querySelector(".display");
+```
 
-This line selects an HTML element with the class name "display" using the document.querySelector() method and assigns it to the display variable. This element represents the display area of the calculator where numbers and results are shown.
-let operator = ""; let firstNumber = ""; let secondNumber = "";
+This line of code creates a variable called `display` and assigns it the result of the `document.querySelector()` method. This method looks for the first element in the HTML document that has a class of `display`. This element is usually an input field or a div where we will display the numbers entered by the user.
 
-These lines declare three variables: operator, firstNumber, and secondNumber. These variables will be used to store the operator, the first number entered by the user, and the second number entered by the user, respectively. They are initialized as empty strings.
-function addToDisplay(num) { ... }
+```
+let operator = "";
+let firstNumber = "";
+let secondNumber = "";
+```
 
-This is a function called addToDisplay that takes a parameter num. It adds the specified num to the display area by updating the value property of the display element. If the current value in the display is "0", it replaces it; otherwise, it appends the new value to the existing one.
-function clearDisplay() { ... }
+These three lines create three more variables: `operator`, `firstNumber`, and `secondNumber`. They are initially empty strings, and they will be used to store the values entered by the user.
 
-This is a function called clearDisplay. It sets the value property of the display element to "0" and resets the operator, firstNumber, and secondNumber variables to empty values.
-function setOperator(op) { ... }
+```
+function addToDisplay(num) {
+	if (display.value === "0") {
+		display.value = num;
+	} else {
+		display.value += num;
+	}
+}
+```
 
-This is a function called setOperator that takes a parameter op. It sets the operator variable to the specified op, stores the current value in the display as the firstNumber, and resets the value property of the display element to "0".
-function calculate() { ... }
+This function adds a number to the display when the user clicks on a number button. If the current value of the display is "0", it replaces it with the clicked number. Otherwise, it appends the clicked number to the current value of the display.
 
-This is a function called calculate. It performs the calculation based on the stored operator, firstNumber, and the current value in the display (secondNumber). It converts the numbers to floats using parseFloat() and applies the corresponding operation based on the operator. The result is then assigned to the result variable and displayed in the value property of the display element. Finally, the operator, firstNumber, and secondNumber are reset to empty values.
-function deleteLastCharacter() { ... }
+```
+function clearDisplay() {
+	display.value = "0";
+	operator = "";
+	firstNumber = "";
+	secondNumber = "";
+}
+```
 
-This is a function called deleteLastCharacter. It removes the last character from the value property of the display element by using the slice() method.
-function handleKeyboardInput(event) { ... }
+This function clears the display and resets the values of the operator and the two numbers to their default values.
 
-This is a function called handleKeyboardInput that takes an event parameter. It handles the keyboard input by mapping different keys to their corresponding actions. If a digit key (0-9) is pressed, it calls the addToDisplay() function with the respective digit. If the dot (.) key is pressed, it adds a decimal point to the display. If the equal (=) or enter key is pressed, it calls the calculate() function. If an operator key (+, -, *, /) is pressed, it calls the setOperator() function with the respective operator.
-document.addEventListener("keydown", function(event) { ... });
+```
+function setOperator(op) {
+	operator = op;
+	firstNumber = display.value;
+	display.value = "0";
+}
+```
 
-This code attaches a keydown event listener to the document object. It listens for keyboard input and calls the handleKeyboardInput() function based on the key code. It maps specific keys to their corresponding actions, such as adding digits, performing calculations, setting operators, etc.
-Overall, the code sets up the necessary functions and event listeners to create a basic calculator that allows the user to perform calculations using both button clicks and keyboard
+This function sets the operator to the value of the clicked operator button, stores the value displayed in the `display` variable in the `firstNumber` variable, and then sets the `display` variable to "0".
+
+```
+function calculate() {
+	secondNumber = display.value;
+	let result = 0;
+
+	if (operator === "+") {
+		result = parseFloat(firstNumber) + parseFloat(secondNumber);
+	} else if (operator === "-") {
+		result = parseFloat(firstNumber) - parseFloat(secondNumber);
+	} else if (operator === "*") {
+		result = parseFloat(firstNumber) * parseFloat(secondNumber);
+	} else if (operator === "/") {
+		result = parseFloat(firstNumber) / parseFloat(secondNumber);
+	}
+
+	display.value = result;
+	operator = "";
+	firstNumber = "";
+	secondNumber = "";
+}
+```
+
+This function calculates the result of the mathematical operation entered by the user. It stores the value displayed in the `display` variable in the `secondNumber` variable, and then checks the value of the `operator` variable to determine which mathematical operation to perform. The result of the operation is stored in the `result` variable. Finally, the `display` variable is set to the value of the `result` variable, and all the variables are reset to their default values.
+
+```
+function deleteLastCharacter() {
+	display.value = display.value.slice(0, -1);
+}
+```
+
+This function removes the last character from the `display` variable, effectively undoing the last button click. It uses the `slice()` method to remove the last character from the string.
