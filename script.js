@@ -48,24 +48,6 @@ function deleteLastCharacter() {
 	display.value = display.value.slice(0, -1);
   }
 
-// Handle keyboard input for mobile devices
-function handleMobileKeyboardInput(event) {
-	const key = event.key;
-
-	// Check if the pressed key is a number key
-	if (/\d/.test(key)) {
-		addToDisplay(key);
-	}
-}
-
-// Add event listener for keyboard input on mobile devices
-document.addEventListener("keydown", function(event) {
-	// Check if the input is from a mobile device
-	if (/Mobi/.test(navigator.userAgent)) {
-		handleMobileKeyboardInput(event);
-	}
-});
-
 function handleKeyboardInput(event) {
 	const key = event.key;
 	if (/\d/.test(key)) {
@@ -84,3 +66,72 @@ function handleKeyboardInput(event) {
 		setOperator("+");
 	}
 }
+
+document.addEventListener("keydown", function(event) {
+	switch (event.code) {
+		case "Digit0":
+		case "Numpad0":
+			addToDisplay("0");
+			break;
+		case "Digit1":
+		case "Numpad1":
+			addToDisplay("1");
+			break;
+		case "Digit2":
+		case "Numpad2":
+			addToDisplay("2");
+			break;
+		case "Digit3":
+		case "Numpad3":
+			addToDisplay("3");
+			break;
+		case "Digit4":
+		case "Numpad4":
+			addToDisplay("4");
+			break;
+		case "Digit5":
+		case "Numpad5":
+			addToDisplay("5");
+			break;
+		case "Digit6":
+		case "Numpad6":
+			addToDisplay("6");
+			break;
+		case "Digit7":
+		case "Numpad7":
+			addToDisplay("7");
+			break;
+		case "Digit8":
+		case "Numpad8":
+			addToDisplay("8");
+			break;
+		case "Digit9":
+		case "Numpad9":
+			addToDisplay("9");
+			break;
+		case "Period":
+		case "NumpadDecimal":
+			addToDisplay(".");
+			break;
+		case "Equal":
+		case "NumpadEnter":
+			calculate();
+			break;
+		case "Slash":
+		case "NumpadDivide":
+			setOperator("/");
+			break;
+		case "Asterisk":
+		case "NumpadMultiply":
+			setOperator("*");
+			break;
+		case "Minus":
+		case "NumpadSubtract":
+			setOperator("-");
+			break;
+		case "Plus":
+		case "NumpadAdd":
+			setOperator("+");
+			break;
+	}
+});
