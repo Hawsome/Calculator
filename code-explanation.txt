@@ -80,45 +80,31 @@ JAVASCRIPT CODE:
 
 This is a JavaScript code that defines a simple calculator. Here's an explanation of each part:
 
-Variable Declarations:
+let display = document.querySelector(".display");
 
-let display = document.querySelector(".display");: This line selects an element with the class "display" from the HTML document and assigns it to the display variable.
-let operator = "";: This variable will store the current operator (+, -, *, /) for the calculator.
-let firstNumber = "";: This variable will store the first number entered for the calculation.
-let secondNumber = "";: This variable will store the second number entered for the calculation.
-addToDisplay(num) function:
+This line selects an HTML element with the class name "display" using the document.querySelector() method and assigns it to the display variable. This element represents the display area of the calculator where numbers and results are shown.
+let operator = ""; let firstNumber = ""; let secondNumber = "";
 
-This function is called when a number or decimal point is pressed. It appends the provided num to the display value.
-If the current display value is "0," it replaces it with num instead of appending it.
-clearDisplay() function:
+These lines declare three variables: operator, firstNumber, and secondNumber. These variables will be used to store the operator, the first number entered by the user, and the second number entered by the user, respectively. They are initialized as empty strings.
+function addToDisplay(num) { ... }
 
-This function is called when the calculator needs to be cleared.
-It resets the display value to "0" and clears the operator, firstNumber, and secondNumber variables.
-setOperator(op) function:
+This is a function called addToDisplay that takes a parameter num. It adds the specified num to the display area by updating the value property of the display element. If the current value in the display is "0", it replaces it; otherwise, it appends the new value to the existing one.
+function clearDisplay() { ... }
 
-This function is called when an operator (+, -, *, /) is pressed.
-It stores the provided operator op, saves the current display value as the firstNumber, and resets the display value to "0" for the next input.
-calculate() function:
+This is a function called clearDisplay. It sets the value property of the display element to "0" and resets the operator, firstNumber, and secondNumber variables to empty values.
+function setOperator(op) { ... }
 
-This function is called when the "=" or "Enter" key is pressed or when the equal button is clicked.
-It performs the calculation based on the stored operator and the firstNumber and secondNumber values.
-The result is computed and assigned to the result variable using parseFloat to handle decimal values.
-The display value is updated with the calculated result, and the operator and number variables are reset.
-deleteLastCharacter() function:
+This is a function called setOperator that takes a parameter op. It sets the operator variable to the specified op, stores the current value in the display as the firstNumber, and resets the value property of the display element to "0".
+function calculate() { ... }
 
-This function is called when the backspace or delete key is pressed.
-It removes the last character from the display value by using the slice method.
-handleKeyboardInput(event) function:
+This is a function called calculate. It performs the calculation based on the stored operator, firstNumber, and the current value in the display (secondNumber). It converts the numbers to floats using parseFloat() and applies the corresponding operation based on the operator. The result is then assigned to the result variable and displayed in the value property of the display element. Finally, the operator, firstNumber, and secondNumber are reset to empty values.
+function deleteLastCharacter() { ... }
 
-This function is called when a key is pressed on the keyboard.
-It handles the input based on the pressed key:
-If the key is a digit (0-9), it calls addToDisplay with the corresponding digit.
-If the key is a period (.), it appends a decimal point to the display value.
-If the key is "=" or "Enter," it calls the calculate function.
-If the key is an operator (+, -, *, /), it calls the setOperator function.
-document.addEventListener("keydown", function(event) { ... });:
+This is a function called deleteLastCharacter. It removes the last character from the value property of the display element by using the slice() method.
+function handleKeyboardInput(event) { ... }
 
-This code attaches an event listener to the keydown event of the document.
-When a key is pressed, it triggers the anonymous function provided, which handles the keyboard input based on the event code.
-The event codes are matched to the corresponding digits, operators, and special keys to perform the appropriate actions.
-The code combines the use of DOM manipulation (document.querySelector), event handling, and conditional statements to create a functional calculator that responds to both button clicks and keyboard input.
+This is a function called handleKeyboardInput that takes an event parameter. It handles the keyboard input by mapping different keys to their corresponding actions. If a digit key (0-9) is pressed, it calls the addToDisplay() function with the respective digit. If the dot (.) key is pressed, it adds a decimal point to the display. If the equal (=) or enter key is pressed, it calls the calculate() function. If an operator key (+, -, *, /) is pressed, it calls the setOperator() function with the respective operator.
+document.addEventListener("keydown", function(event) { ... });
+
+This code attaches a keydown event listener to the document object. It listens for keyboard input and calls the handleKeyboardInput() function based on the key code. It maps specific keys to their corresponding actions, such as adding digits, performing calculations, setting operators, etc.
+Overall, the code sets up the necessary functions and event listeners to create a basic calculator that allows the user to perform calculations using both button clicks and keyboard
