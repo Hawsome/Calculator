@@ -129,6 +129,43 @@ button.delete:hover {
   cursor: pointer;
 }
 
+/* .keyboard-shortcuts {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.keyboard-shortcuts h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.keyboard-shortcuts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keyboard-shortcuts li {
+  font-size: 14px;
+  margin-right: 20px;
+  white-space: nowrap;
+}
+
+.keyboard-shortcuts li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #999;
+  margin-right: 8px;
+  position: relative;
+  top: 2px;
+} */
+
 /* Style the footer */
 footer {
   background-color: #ddd;
