@@ -40,41 +40,48 @@ CSS CODE:
 
 This code contains a series of CSS rules that styles various elements of a calculator interface and includes animations. Here's an explanation of the different sections and their purpose:
 
-Global Styles:
-body: Sets the font family, size, and color for the entire document.
-body: Sets a background color for the document.
+The provided CSS code contains styling rules for various elements in the calculator application. Let's go through each section and explain what it does:
 
-Header Styles:
-header: Styles the header element of the calculator.
-header h1: Styles the header title within the header element.
+1. Font and General Styling:
+   - The `body` selector sets the font family to "Roboto", Arial, sans-serif, the font size to 16 pixels, and the text color to #333 (dark gray).
+   - The `body` selector also sets a background gradient using the `linear-gradient` function, creating a modern background effect.
 
-Calculator Container Styles:
-.calculator: Styles the container element for the calculator.
-Calculator Display Styles:
-.display: Styles the display element of the calculator.
+2. Header Styling:
+   - The `header` selector styles the header element, setting the background color to #172a45 (dark blue), the text color to #fff (white), adding padding, center-aligning the text, and applying a border-radius and box shadow to give it a rounded and shadowed appearance.
+   - The `header h1` selector styles the heading within the header, setting the font size to 36 pixels and removing any margin.
 
-Calculator Button Styles:
-button: Styles the buttons within the calculator.
-button:hover: Styles the buttons when hovered over.
-button.operator: Styles the operator buttons differently.
-button.clear: Styles the clear button differently.
-button.equal: Styles the equal button differently.
-button.delete: Styles the delete button differently.
-button.delete:hover: Styles the delete button when hovered over.
+3. Calculator Container Styling:
+   - The `.calculator` selector styles the calculator container element, using CSS grid to create a grid layout with four equal columns, setting a maximum width, margin, padding, border, background color, border-radius, and box shadow.
 
-Footer Styles:
-footer: Styles the footer element of the calculator.
+4. Calculator Display Styling:
+   - The `.display` selector styles the calculator display input element, spanning across all columns, setting a height, font size, right-aligned text, padding, border, border-radius, background color, and box shadow.
 
-Social Icons Styles:
-.social-icons: Styles the container for social icons.
-.social-icons a: Styles the social icon links within the container.
-.social-icons i: Styles the social icon elements within the links.
-.social-icons a:hover i: Styles the social icons when hovered over.
+5. Calculator Button Styling:
+   - The `button` selector styles all buttons within the calculator, setting their width, height, font size, removing the border, adding border-radius, background color, text color, cursor style, and transition effect.
+   - The `button:hover` selector styles the buttons when hovered, changing the background color and applying a scale transform to create a slight zoom effect.
 
-Media Queries:
-@media: Defines styles for different screen sizes.
-@media only screen and (max-width: 360px): Styles for screens smaller than 360px.
-@media only screen and (min-width: 361px) and (max-width: 1024px): Styles for screens between 361px and 1024px.
+6. Operator, Clear, and Equal Button Styling:
+   - The `.operator` selector styles operator buttons, setting a different background color, text color, and font weight.
+   - The `.clear` selector styles the clear button, setting a different background color, text color, and font weight.
+   - The `.equal` selector styles the equal button, setting a different background color, text color, and font weight.
+
+7. Delete Button Styling:
+   - The `.delete` selector styles the delete button, setting a different background color, text color, and font weight.
+   - The `.delete:hover` selector styles the delete button when hovered, changing the background color.
+
+8. Footer Styling:
+   - The `footer` selector styles the footer element, setting the background color to #172a45 (dark blue), the text color to #fff (white), adding padding, center-aligning the text, applying a border-radius and box shadow to give it a rounded and shadowed appearance.
+
+9. Footer Text Styling:
+   - The `footer p` selector styles the text within the footer, removing any margin and setting the font size to 14 pixels.
+
+10. Animation Keyframes:
+   - The `@keyframes` rule defines two animations: `fadeIn` and `slideIn`. These animations are used to create fading and sliding effects when elements are displayed.
+
+11. Social Icons Styling:
+   - The `.social-icons` selector styles the social icons container, adding top margin and center-aligning the icons.
+   - The `.social-icons a` selector styles the social icons, displaying them as inline-block elements, adding right margin, setting the color to #fff (white), and defining a transition effect for the color change.
+   - The `.social-icons a.linkedin:hover`, `.social-icons a.twitter:hover`, and `.social-icons a.email:hover` selectors style the respective
 
 JAVASCRIPT CODE:
 
