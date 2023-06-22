@@ -89,81 +89,26 @@ This is a JavaScript code that defines a simple calculator. Here's an explanatio
 
 Sure! Here's an explanation of each line of code in this snippet:
 
-```
-let display = document.querySelector(".display");
-```
+Sure! Here's an explanation of the code you provided:
 
-This line of code creates a variable called `display` and assigns it the result of the `document.querySelector()` method. This method looks for the first element in the HTML document that has a class of `display`. This element is usually an input field or a div where we will display the numbers entered by the user.
+1. `let display = document.querySelector('.display');`: This line selects the element with the class "display" using `document.querySelector()`. It assigns the selected element to the `display` variable, which will be used to update the display value.
 
-```
-let operator = "";
-let firstNumber = "";
-let secondNumber = "";
-```
+2. `let operator = '';`: This variable `operator` is used to store the current operator (+, -, *, or /) selected by the user.
 
-These three lines create three more variables: `operator`, `firstNumber`, and `secondNumber`. They are initially empty strings, and they will be used to store the values entered by the user.
+3. `let firstNumber = '';`: This variable `firstNumber` is used to store the first operand of the calculation.
 
-```
-function addToDisplay(num) {
-	if (display.value === "0") {
-		display.value = num;
-	} else {
-		display.value += num;
-	}
-}
-```
+4. `let result = null;`: This variable `result` is used to store the result of the calculation.
 
-This function adds a number to the display when the user clicks on a number button. If the current value of the display is "0", it replaces it with the clicked number. Otherwise, it appends the clicked number to the current value of the display.
+5. `function addToDisplay(num) { ... }`: This function is called when a number button is clicked. It adds the clicked number to the display value. If the current display value is '0' or an operator is already selected, it replaces the display value with the clicked number. Otherwise, it appends the number to the existing display value.
 
-```
-function clearDisplay() {
-	display.value = "0";
-	operator = "";
-	firstNumber = "";
-	secondNumber = "";
-}
-```
+6. `function clearDisplay() { ... }`: This function is called when the clear button is clicked. It resets the display value to '0', clears the `operator`, `firstNumber`, and `result` variables.
 
-This function clears the display and resets the values of the operator and the two numbers to their default values.
+7. `function setOperator(op) { ... }`: This function is called when an operator button (+, -, *, /) is clicked. If an operator is already selected, it calls the `calculate()` function to perform the previous calculation. It then assigns the clicked operator to the `operator` variable, stores the current display value in `firstNumber`, and resets the display value to '0'.
 
-```
-function setOperator(op) {
-	operator = op;
-	firstNumber = display.value;
-	display.value = "0";
-}
-```
+8. `function calculate() { ... }`: This function is called when the equal (=) button is clicked. It performs the calculation based on the selected operator and updates the `result` variable. If `result` is `null`, it assigns the result of the current calculation to `result`. Otherwise, it calls the `performOperation()` function to perform the operation using the previous result, the current operator, and the second number. It then updates the display value with the `result`, clears the `operator` and `firstNumber` variables, and prepares for the next calculation.
 
-This function sets the operator to the value of the clicked operator button, stores the value displayed in the `display` variable in the `firstNumber` variable, and then sets the `display` variable to "0".
+9. `function performOperation(num1, op, num2) { ... }`: This function performs the arithmetic operation based on the provided operator. It takes two numbers (`num1` and `num2`) and the operator (`op`) as arguments and returns the result of the operation.
 
-```
-function calculate() {
-	secondNumber = display.value;
-	let result = 0;
+10. `function deleteLastCharacter() { ... }`: This function is called when the delete button is clicked. It removes the last character from the display value by using the `slice()` method.
 
-	if (operator === "+") {
-		result = parseFloat(firstNumber) + parseFloat(secondNumber);
-	} else if (operator === "-") {
-		result = parseFloat(firstNumber) - parseFloat(secondNumber);
-	} else if (operator === "*") {
-		result = parseFloat(firstNumber) * parseFloat(secondNumber);
-	} else if (operator === "/") {
-		result = parseFloat(firstNumber) / parseFloat(secondNumber);
-	}
-
-	display.value = result;
-	operator = "";
-	firstNumber = "";
-	secondNumber = "";
-}
-```
-
-This function calculates the result of the mathematical operation entered by the user. It stores the value displayed in the `display` variable in the `secondNumber` variable, and then checks the value of the `operator` variable to determine which mathematical operation to perform. The result of the operation is stored in the `result` variable. Finally, the `display` variable is set to the value of the `result` variable, and all the variables are reset to their default values.
-
-```
-function deleteLastCharacter() {
-	display.value = display.value.slice(0, -1);
-}
-```
-
-This function removes the last character from the `display` variable, effectively undoing the last button click. It uses the `slice()` method to remove the last character from the string.
+These functions work together to handle user interactions, update the display, and perform calculations based on the selected operator.
