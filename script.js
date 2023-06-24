@@ -1,73 +1,49 @@
-let display = document.querySelector('.display');
-let operator = '';
-let firstNumber = '';
-let result = null;
+let display = document.querySelector(".display");
+let operator = "";
+let firstNumber = "";
+let secondNumber = "";
 
 function addToDisplay(num) {
-    if (display.value === '0' || operator !== '') {
-        display.value = num;
-    } else {
-        display.value += num;
-    }
+	if (display.value === "0") {
+		display.value = num;
+	} else {
+		display.value += num;
+	}
 }
 
 function clearDisplay() {
-    display.value = '0';
-    operator = '';
-    firstNumber = '';
-    result = null;
+	display.value = "0";
+	operator = "";
+	firstNumber = "";
+	secondNumber = "";
 }
 
 function setOperator(op) {
-    if (operator !== '') {
-        calculate();
-    }
-    operator = op;
-    firstNumber = display.value;
-    display.value = '0';
+	operator = op;
+	firstNumber = display.value;
+	display.value = "0";
 }
 
 function calculate() {
-    if (operator === '') {
-        return;
-    }
+	secondNumber = display.value;
+	let result = 0;
 
-    const secondNumber = display.value;
-    let tempResult = null;
+	if (operator === "+") {
+		result = parseFloat(firstNumber) + parseFloat(secondNumber);
+	} else if (operator === "-") {
+		result = parseFloat(firstNumber) - parseFloat(secondNumber);
+	} else if (operator === "*") {
+		result = parseFloat(firstNumber) * parseFloat(secondNumber);
+	} else if (operator === "/") {
+		result = parseFloat(firstNumber) / parseFloat(secondNumber);
+	}
 
-    if (operator === '+') {
-        tempResult = parseFloat(firstNumber) + parseFloat(secondNumber);
-    } else if (operator === '-') {
-        tempResult = parseFloat(firstNumber) - parseFloat(secondNumber);
-    } else if (operator === '*') {
-        tempResult = parseFloat(firstNumber) * parseFloat(secondNumber);
-    } else if (operator === '/') {
-        tempResult = parseFloat(firstNumber) / parseFloat(secondNumber);
-    }
-
-    if (result === null) {
-        result = tempResult;
-    } else {
-        result = performOperation(result, operator, parseFloat(secondNumber));
-    }
-
-    display.value = result;
-    operator = '';
-    firstNumber = '';
-}
-
-function performOperation(num1, op, num2) {
-    if (op === '+') {
-        return num1 + num2;
-    } else if (op === '-') {
-        return num1 - num2;
-    } else if (op === '*') {
-        return num1 * num2;
-    } else if (op === '/') {
-        return num1 / num2;
-    }
+	display.value = result;
+	operator = "";
+	firstNumber = "";
+	secondNumber = "";
 }
 
 function deleteLastCharacter() {
-    display.value = display.value.slice(0, -1);
-}
+	display.value = display.value.slice(0, -1);
+} 
